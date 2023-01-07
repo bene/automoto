@@ -1,16 +1,11 @@
 import { chromium } from "playwright";
+import { RegularTask, RegularTaskContext } from "../packages/sdk/RegularTask";
 
-import { EmailTrigger, EnvironmentManager, Task } from "../sdk";
+class HandyVertrag extends RegularTask {
 
-class HandyVertrag extends Task {
-
-    constructor() {
-        super(new EmailTrigger({ address: "handyvertrag+evobend@automoto.io" }))
-    }
-
-    async onExecute() {
-        const username = EnvironmentManager.getVariable("handyvertrag:username")
-        const password = EnvironmentManager.getSecret("handyvertrag:password")
+    async onExecute(ctx: RegularTaskContext) {
+        const username = ctx.environment.getVariable("handyvertrag:username")
+        const password = ctx.environment.getSecret("handyvertrag:password")
 
         if (!username) {
             throw "Username for service.handyvertrag.de missing"

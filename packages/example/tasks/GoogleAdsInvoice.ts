@@ -1,16 +1,11 @@
 import { firefox } from "playwright";
+import { RegularTask, RegularTaskContext } from "../packages/sdk/RegularTask";
 
-import { CronTrigger, EnvironmentManager, Task } from "../sdk"
+class GoogleAdsInvoice extends RegularTask {
 
-class GoogleAdsInvoice extends Task {
-
-    constructor() {
-        super(new CronTrigger({ interval: "0 0 10 * *" }))
-    }
-
-    async onExecute() {
-        const username = EnvironmentManager.getVariable("google:username")
-        const password = EnvironmentManager.getSecret("google:password")
+    async onExecute(ctx: RegularTaskContext) {
+        const username = ctx.environment.getVariable("google:username")
+        const password = ctx.environment.getSecret("google:password")
 
         if (!username) {
             throw "Username for Google missing"

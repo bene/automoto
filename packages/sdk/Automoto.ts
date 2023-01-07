@@ -2,31 +2,33 @@ import { createGraphQLError, createYoga } from "graphql-yoga";
 import { makeSchema, mutationType, nonNull, objectType, queryType, stringArg } from "nexus";
 import { createServer } from 'http'
 
-import Task from "./Task";
+import Environment from "./environment";
+import { RegularTask } from "./RegularTask";
+import { ScheduledTask } from "./ScheduledTask";
 
 interface TaskRegistrations {
-    [taskName: string]: Task
+    [taskName: string]: RegularTask | ScheduledTask
 }
 
 class Automoto {
 
-    private readonly taskRegistrations: TaskRegistrations = {}
+    private readonly tasks: TaskRegistrations = {}
 
     constructor(id: string) {
 
     }
 
-    register(taskName: string, task: Task) {
-        if (this.taskRegistrations[taskName]) {
+    register(taskName: string, task: RegularTask | ScheduledTask) {
+        if (this.tasks[taskName]) {
             throw new Error("Task with identical name already registered")
         }
-
-        this.taskRegistrations[taskName] = task
+        this.tasks[taskName] = task
+        task.onRegister?.()
     }
 
     listen(bind: string | number) {
 
-        const taskRegistrations = this.taskRegistrations
+        const taskRegistrations = this.tasks
 
         const Query = queryType({
             definition(t) {
@@ -56,7 +58,14 @@ class Automoto {
                         }
 
                         console.log("Executing task:", taskName)
-                        taskRegistrations[taskName].onExecute()
+                        taskRegistrations[taskName].onExecute({
+                            environment: new Environment(),
+                            output: {
+                                async table() {
+
+                                },
+                            }
+                        })
                     }
                 })
             },

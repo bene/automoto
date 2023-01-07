@@ -1,0 +1,10 @@
+{
+  "name": "automoto",
+  "version": "1.0.0",
+  "scripts": {
+    "build": ""
+  },
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  }
+}
