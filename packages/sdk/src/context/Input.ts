@@ -1,9 +1,7 @@
-
 class Input {
-
     async text() {
-        return "Hallo"
+        return "Hallo";
     }
 }
 
-export default Input
+export default Input;

@@ -1,18 +1,17 @@
-import { RegularTask, RegularTaskContext } from "automoto"
+import { RegularTask, RegularTaskContext } from "automoto";
 import { chromium } from "playwright";
 
 class HandyVertrag extends RegularTask {
-
     async onExecute(ctx: RegularTaskContext) {
-        const username = ctx.environment.getVariable("handyvertrag:username")
-        const password = ctx.environment.getSecret("handyvertrag:password")
+        const username = ctx.environment.getVariable("handyvertrag:username");
+        const password = ctx.environment.getSecret("handyvertrag:password");
 
         if (!username) {
-            throw "Username for service.handyvertrag.de missing"
+            throw "Username for service.handyvertrag.de missing";
         }
 
         if (!password) {
-            throw "Password for service.handyvertrag.de missing"
+            throw "Password for service.handyvertrag.de missing";
         }
 
         // Create page
@@ -37,4 +36,4 @@ class HandyVertrag extends RegularTask {
     }
 }
 
-export default HandyVertrag
+export default HandyVertrag;

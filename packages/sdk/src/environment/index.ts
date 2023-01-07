@@ -1,11 +1,11 @@
 class Environment {
     getVariable(name: string): string | null {
-        return "placeholder"
+        return "placeholder";
     }
 
     getSecret(name: string): string | null {
-        return "placeholder"
+        return "placeholder";
     }
 }
 
-export default Environment
+export default Environment;

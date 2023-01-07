@@ -1,14 +1,13 @@
-import { ScheduledTask, ScheduledTaskContext } from "automoto"
+import { ScheduledTask, ScheduledTaskContext } from "automoto";
 
 class SimpleScheduledTask extends ScheduledTask {
-
     constructor() {
-        super({ interval: "* * * * * *" })
+        super({ interval: "* * * * * *" });
     }
 
     async onExecute(context: ScheduledTaskContext): Promise<string | void> {
-        console.log("Hallo Welt!")
+        console.log("Hallo Welt!");
     }
 }
 
-export default SimpleScheduledTask
+export default SimpleScheduledTask;

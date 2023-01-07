@@ -1,17 +1,17 @@
 {
-  "name": "@automoto/example",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "dev": "nodemon main.ts"
-  },
-  "dependencies": {
-    "automoto": "*",
-    "playwright": "^1.29.1"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.20",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.9.4"
-  }
+    "name": "@automoto/example",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "dev": "nodemon main.ts"
+    },
+    "dependencies": {
+        "automoto": "*",
+        "playwright": "^1.29.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.20",
+        "ts-node": "^10.9.1",
+        "typescript": "^4.9.4"
+    }
 }

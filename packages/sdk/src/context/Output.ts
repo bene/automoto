@@ -1,19 +1,11 @@
 class Output {
-    async text() {
+    async text() {}
 
-    }
+    async markdown() {}
 
-    async markdown() {
+    async table() {}
 
-    }
-
-    async table() {
-
-    }
-
-    async download() {
-
-    }
+    async download() {}
 }
 
-export default Output
+export default Output;

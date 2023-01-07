@@ -1,7 +1,7 @@
 import Environment from "../environment";
 
 interface Context {
-    environment: Environment
+    environment: Environment;
 }
 
-export { type Context }
+export { type Context };

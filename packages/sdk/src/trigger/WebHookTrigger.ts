@@ -6,4 +6,4 @@ class WebHookTrigger implements Trigger {
     }
 }
 
-export default WebHookTrigger
+export default WebHookTrigger;
