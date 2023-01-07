@@ -21,6 +21,15 @@ abstract class ScheduledTask implements Task<ScheduledTaskContext> {
                     async table() {
 
                     },
+                    async download() {
+
+                    },
+                    async markdown() {
+
+                    },
+                    async text() {
+
+                    },
                 }
             })
         })

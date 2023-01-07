@@ -1,4 +1,4 @@
-import { ScheduledTask, ScheduledTaskContext } from "../packages/sdk/ScheduledTask";
+import { ScheduledTask, ScheduledTaskContext } from "automoto"
 
 class SimpleScheduledTask extends ScheduledTask {
 

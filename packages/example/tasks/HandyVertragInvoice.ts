@@ -1,5 +1,5 @@
+import { RegularTask, RegularTaskContext } from "automoto"
 import { chromium } from "playwright";
-import { RegularTask, RegularTaskContext } from "../packages/sdk/RegularTask";
 
 class HandyVertrag extends RegularTask {
 

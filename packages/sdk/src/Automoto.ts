@@ -23,7 +23,6 @@ class Automoto {
             throw new Error("Task with identical name already registered")
         }
         this.tasks[taskName] = task
-        task.onRegister?.()
     }
 
     listen(bind: string | number) {
@@ -63,6 +62,20 @@ class Automoto {
                             output: {
                                 async table() {
 
+                                },
+                                async download() {
+
+                                },
+                                async markdown() {
+
+                                },
+                                async text() {
+
+                                }
+                            },
+                            input: {
+                                async text() {
+                                    return ""
                                 },
                             }
                         })

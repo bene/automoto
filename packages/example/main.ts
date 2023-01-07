@@ -1,4 +1,5 @@
-import { Automoto } from "./sdk";
+import { Automoto } from "automoto";
+
 import GoogleAdsInvoice from "./tasks/GoogleAdsInvoice";
 import HandyVertragInvoice from "./tasks/HandyVertragInvoice";
 import SimpleScheduledTask from "./tasks/SimpleScheduledTask";

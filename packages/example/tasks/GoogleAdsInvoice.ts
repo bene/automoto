@@ -1,5 +1,5 @@
 import { firefox } from "playwright";
-import { RegularTask, RegularTaskContext } from "../packages/sdk/RegularTask";
+import { RegularTask, RegularTaskContext } from "automoto"
 
 class GoogleAdsInvoice extends RegularTask {
 
